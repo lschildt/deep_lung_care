@@ -29,8 +29,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-  int _currentIndex=0;
+  int _currentIndex = 0;
 
   List<T> map<T>(List list, Function handler) {
     List<T> result = [];
@@ -43,30 +42,30 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavDrawer(),
-      appBar: AppBar(
-        title: Text(''),
-      ),
+        drawer: NavDrawer(),
+        appBar: AppBar(
+          title: Text(''),
+        ),
         body: Column(
           children: <Widget>[
             CarouselSlider(
-              options: CarouselOptions(
-                height: 180.0,
-                viewportFraction: 1.0,
-                enlargeCenterPage: false,
-                autoPlay: true,
-                autoPlayInterval: Duration(seconds: 5),
-                autoPlayAnimationDuration: Duration(milliseconds: 800),
-                autoPlayCurve: Curves.fastOutSlowIn,
-                pauseAutoPlayOnTouch: true,
-                aspectRatio: 2.0,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    _currentIndex = index;
-                  });
-                },
-              ),
-              items: imageSliders
+                options: CarouselOptions(
+                  height: 160.0,
+                  viewportFraction: 1.0,
+                  enlargeCenterPage: false,
+                  autoPlay: true,
+                  autoPlayInterval: Duration(seconds: 5),
+                  autoPlayAnimationDuration: Duration(milliseconds: 800),
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  pauseAutoPlayOnTouch: true,
+                  aspectRatio: 5.0,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      _currentIndex = index;
+                    });
+                  },
+                ),
+                items: imageSliders
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -83,31 +82,59 @@ class _MyHomePageState extends State<MyHomePage> {
               }),
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(
-                  "Nova linha",
-                  textAlign: TextAlign.left,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                Card(
+                  child: InkWell(
+                    splashColor: Colors.green.withAlpha(30),
+                    onTap: () {
+                      print('Card tapped.');
+                    },
+                    child: const SizedBox(
+                      width: 300,
+                      height: 100,
+                      child: Text('A card that can be tapped'),
+                    ),
+                  ),
                 ),
               ]
             ),
+            Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Card(
+                    child: InkWell(
+                      splashColor: Colors.green.withAlpha(30),
+                      onTap: () {
+                        print('Card tapped.');
+                      },
+                      child: const SizedBox(
+                        width: 300,
+                        height: 100,
+                        child: Text('A card that can be tapped'),
+                      ),
+                    ),
+                  ),
+                ]
+            ),
+
           ],
-        )
-    );
+        ));
   }
 }
 
-final List<Widget> imageSliders = imgList.map((item) => Container(
-  child: Container(
-    margin: EdgeInsets.all(20.0),
-    child: ClipRRect(
-        borderRadius: BorderRadius.all(Radius.circular(5.0)),
-        child: Stack(
-          children: <Widget>[
-            //Image.network(item, fit: BoxFit.cover, width: 1000.0),
-            Image.asset(item),
-          ],
-        )
-    ),
-  ),
-)).toList();
+final List<Widget> imageSliders = imgList
+    .map((item) => Container(
+          child: Container(
+            margin: EdgeInsets.all(2.0),
+            child: ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                child: Stack(
+                  children: <Widget>[
+                    //Image.network(item, fit: BoxFit.cover, width: 1000.0),
+                    Image.asset(item),
+                  ],
+                )),
+          ),
+        ))
+    .toList();

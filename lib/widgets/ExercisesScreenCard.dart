@@ -1,3 +1,4 @@
+import 'package:deep_lung_care/widgets/ExerciseInstructionScreen.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -26,8 +27,12 @@ class ExercisesScreenCard extends Card {
       ),
       child: InkWell(
         splashColor: Colors.green.withAlpha(30),
-        onTap: () {
-          print('Card tapped.');
+        onTap:  () => {
+          Navigator.of(context).pop(),
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ExerciseInstructionScreen()),
+          )
         },
         child: SizedBox(
           width: 120,

@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             CarouselSlider(
                 options: CarouselOptions(
-                  height: 160.0,
+                  height: 170.0,
                   viewportFraction: 1.0,
                   enlargeCenterPage: false,
                   autoPlay: true,
@@ -82,41 +82,165 @@ class _MyHomePageState extends State<MyHomePage> {
               }),
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Card(
-                  child: InkWell(
-                    splashColor: Colors.green.withAlpha(30),
-                    onTap: () {
-                      print('Card tapped.');
-                    },
-                    child: const SizedBox(
-                      width: 300,
-                      height: 100,
-                      child: Text('A card that can be tapped'),
-                    ),
-                  ),
-                ),
-              ]
-            ),
-            Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Card(
+                    elevation: 0,
+                    shadowColor: Colors.black,
+                    color: Colors.white,
                     child: InkWell(
                       splashColor: Colors.green.withAlpha(30),
                       onTap: () {
                         print('Card tapped.');
                       },
-                      child: const SizedBox(
-                        width: 300,
-                        height: 100,
-                        child: Text('A card that can be tapped'),
+                      child: SizedBox(
+                        width: (MediaQuery.of(context).size.width) - 10,
+                        height: 60,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
+                          child: Row(
+                            children: <Widget>[
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: <Widget>[
+                                  SizedBox(width: 360),
+                                  Text("FISIOTERAPIA RESPIRATÓRIA", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.green)),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                   ),
                 ]
             ),
+            Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Card(
+                    elevation: 0,
+                    shadowColor: Colors.black,
+                    color: Colors.white,
+                    child: InkWell(
+                      splashColor: Colors.green.withAlpha(30),
+                      onTap: () {
+                        print('Card tapped.');
+                      },
+                      child: SizedBox(
+                        width: (MediaQuery.of(context).size.width) - 10,
+                        height: 140,
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Row(
+                            children: <Widget>[
+                              Row(
+                                children: <Widget>[
+                                  Image.asset('assets/images/logo.webp', height: 70, width: 90),
+                                  SizedBox(width: 20),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: <Widget>[
+                                      Text("Plataforma digital desenvolvida para\nauxiliar você à realizar exercícios\nventilatórios de forma moderna e didática."
+                                          , style: TextStyle(fontSize: 14, color: Colors.green)),
+                                    ],
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ]
+            ),
+            Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Card(
+                    elevation: 0,
+                    shadowColor: Colors.black,
+                    color: Colors.white,
+                    child: InkWell(
+                      splashColor: Colors.green.withAlpha(30),
+                      onTap: () {
+                        print('Card tapped.');
+                      },
+                      child: SizedBox(
+                        width: (MediaQuery.of(context).size.width) - 10,
+                        height: 180,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
+                          child: Row(
+                            children: <Widget>[
+                              Text("DEEP CARE", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.green)),
+                              SizedBox(width: 80),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                mainAxisSize: MainAxisSize.min,
+                                children: <Widget>[
+                                  Text("PARE", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                                  SizedBox(height: 8),
+                                  Text("RESPIRE", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                                  SizedBox(height: 8),
+                                  Text("PRATIQUE", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                                ],
+                              ),
+                              Spacer(),
+                              Image.asset('assets/images/deep.png', height: 120),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ]
+            ),
+
+
+
+            /*Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Card(
+                    elevation: 0,
+                    shadowColor: Colors.black,
+                    color: Colors.white,
+                    child: InkWell(
+                      splashColor: Colors.green.withAlpha(30),
+                      onTap: () {
+                        print('Card tapped.');
+                      },
+                      child: SizedBox(
+                        width: (MediaQuery.of(context).size.width) - 10,
+                        height: 80,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
+                          child: Row(
+                            children: <Widget>[
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                children: <Widget>[
+                                  SizedBox(width: 360),
+                                  Text("MARCELLO TABELLI +55 51 98110-1823", style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                                  SizedBox(height: 8),
+                                  Text("@DEEPLUNGCARE / @MARCELLOMEES", style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                                  SizedBox(height: 8),
+                                  Text("PORTO ALEGRE, RS / BRAZIL", style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ]
+            ),*/
 
           ],
         ));

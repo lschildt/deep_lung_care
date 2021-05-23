@@ -6,10 +6,12 @@ class ExercisesScreenCard extends Card {
 
   String title;
   double textSize;
+  ExerciseInstructionScreen exerciseInstructionScreen;
 
-  ExercisesScreenCard(String title, double textSize) {
+  ExercisesScreenCard(String title, double textSize, ExerciseInstructionScreen exerciseInstructionScreen) {
     this.title = title;
     this.textSize = textSize;
+    this.exerciseInstructionScreen = exerciseInstructionScreen;
   }
 
   @override
@@ -31,7 +33,7 @@ class ExercisesScreenCard extends Card {
           Navigator.of(context).pop(),
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => ExerciseInstructionScreen()),
+            MaterialPageRoute(builder: (context) => exerciseInstructionScreen),
           )
         },
         child: SizedBox(

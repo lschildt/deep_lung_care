@@ -30,7 +30,7 @@ class ExercisesScreenCard extends Card {
       child: InkWell(
         splashColor: Colors.green.withAlpha(30),
         onTap:  () => {
-          Navigator.of(context).pop(),
+          //Navigator.of(context).pop(),
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => exerciseInstructionScreen),

@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -7,12 +9,14 @@ class ExerciseInstructionScreen extends StatelessWidget {
   String description;
   String imgAnimation;
   String imgInstructions;
+  double descriptionFontSize;
 
-  ExerciseInstructionScreen(String title, String description, String imgAnimation, String imgInstructions) {
+  ExerciseInstructionScreen(String title, String description, String imgAnimation, String imgInstructions, double descriptionFontSize) {
     this.title = title;
     this.imgAnimation = imgAnimation;
     this.imgInstructions = imgInstructions;
     this.description = description;
+    this.descriptionFontSize = descriptionFontSize;
   }
 
   @override
@@ -52,13 +56,13 @@ class ExerciseInstructionScreen extends StatelessWidget {
               children: <Widget>[
                 Container(
                     margin: const EdgeInsets.all(10.0),
-                    padding: const EdgeInsets.all(15.0),
+                    padding: const EdgeInsets.all(10.0),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.black),
                       color: Colors.white,
                     ),
                     child: Text(description
-                        , style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black))
+                        , style: TextStyle(fontSize: descriptionFontSize, fontWeight: FontWeight.bold, color: Colors.black))
                 )
               ]
           ),

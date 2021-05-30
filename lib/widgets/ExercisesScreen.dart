@@ -25,17 +25,8 @@ class ExercisesScreen extends StatelessWidget {
                       height: 40,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
-                        child: Row(
-                          children: <Widget>[
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.min,
-                              children: <Widget>[
-                                SizedBox(width: 360),
-                                Text("INSUFLANTES", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
-                              ],
-                            ),
-                          ],
+                        child: Center(
+                          child: Text("INSUFLANTES", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
                         ),
                       ),
                     ),
@@ -140,17 +131,8 @@ class ExercisesScreen extends StatelessWidget {
                       height: 40,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
-                        child: Row(
-                          children: <Widget>[
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.min,
-                              children: <Widget>[
-                                SizedBox(width: 360),
-                                Text("DESINSUFLANTES", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
-                              ],
-                            ),
-                          ],
+                        child: Center(
+                          child: Text("DESINSUFLANTES", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
                         ),
                       ),
                     ),
@@ -170,11 +152,11 @@ class ExercisesScreen extends StatelessWidget {
                           'instructions.png',
                       14)),
                   SizedBox(
-                      width: 140,
+                      width: (MediaQuery.of(context).size.width - 20) / 3,
                       height: 100,
                   ),
                   SizedBox(
-                    width: 120,
+                    width: (MediaQuery.of(context).size.width - 20) / 3,
                     height: 100,
                   ),
                 ]

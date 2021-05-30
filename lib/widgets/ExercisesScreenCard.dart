@@ -37,7 +37,7 @@ class ExercisesScreenCard extends Card {
           )
         },
         child: SizedBox(
-          width: 120,
+          width: (MediaQuery.of(context).size.width - 40) / 3,
           height: 100,
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),

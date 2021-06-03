@@ -1,6 +1,9 @@
 import 'dart:ffi';
+import 'dart:math';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+
 
 // ignore: must_be_immutable
 class ExerciseInstructionScreen extends StatelessWidget {
@@ -21,6 +24,7 @@ class ExerciseInstructionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
@@ -38,7 +42,7 @@ class ExerciseInstructionScreen extends StatelessWidget {
                         border: Border.all(color: Colors.black),
                         color: Colors.white,
                       ),
-                      child: Image.asset('assets/images/' + imgAnimation, height: 200),
+                      child: Image.asset('assets/images/' + imgAnimation, width: (MediaQuery.of(context).size.width - 40)),
                   )
                 ]
             ),
@@ -52,21 +56,16 @@ class ExerciseInstructionScreen extends StatelessWidget {
                   )
                 ]
             ),
-            Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                      margin: const EdgeInsets.all(10.0),
-                      padding: const EdgeInsets.all(10.0),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black),
-                        color: Colors.white,
-                      ),
-                      child: Text(description
-                          , style: TextStyle(fontSize: descriptionFontSize, fontWeight: FontWeight.bold, color: Colors.black))
-                  )
-                ]
-            ),
+
+            Container(
+                margin: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black),
+                  color: Colors.white,
+                ),
+                child: AutoSizeText(description, style: TextStyle(fontSize: descriptionFontSize, fontWeight: FontWeight.bold, color: Colors.black))
+            )
           ]
         )
       )

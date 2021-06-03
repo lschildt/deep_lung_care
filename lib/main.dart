@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:deep_lung_care/widgets/NavDrawer.dart';
 import 'package:flutter/material.dart';
@@ -111,7 +112,24 @@ class _MyHomePageState extends State<MyHomePage> {
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Card(
+                    Image.asset('assets/images/logo.webp', width: 90),
+                    SizedBox(width: 20),
+                    Container(
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          minWidth: 80.0,
+                          maxWidth: 240.0,
+                          minHeight: 100.0,
+                          maxHeight: 180.0,
+                        ),
+                        child: AutoSizeText(
+                          "Plataforma digital desenvolvida para auxiliar você à realizar exercícios ventilatórios de forma moderna e didática.",
+                          style: TextStyle(fontSize: 14, color: Colors.green),
+                        ),
+                      ),
+                    )
+
+                    /*Card(
                       elevation: 0,
                       shadowColor: Colors.black,
                       color: Colors.white,
@@ -131,20 +149,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                   children: <Widget>[
                                     Image.asset('assets/images/logo.webp', height: 70, width: 90),
                                     SizedBox(width: 20),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: <Widget>[
+                                    Container(
+                                      child:
                                        /* Text("Plataforma digital desenvolvida para\nauxiliar você à realizar exercícios\nventilatórios de forma moderna e didática."
                                             , style: TextStyle(fontSize: 14, color: Colors.green)),*/
-                                        Flexible(
-                                          child: Text('Plataforma digital desenvolvida para\nauxiliar você à realizar exercícios\nventilatórios de forma moderna e didática.',
-                                            maxLines: 1,
-                                            softWrap: false,
-                                            overflow: TextOverflow.fade,
-                                          ),
-                                        ),
-                                      ],
+                                        AutoSizeText('Plataforma digital desenvolvida para auxiliar você à realizar exercícios ventilatórios de forma moderna e didática.'),
+
+
                                     ),
                                   ],
                                 )
@@ -153,7 +164,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                       ),
-                    ),
+                    ),*/
                   ]
               ),
               Row(

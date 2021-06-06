@@ -4,8 +4,19 @@ import 'ContactScreen.dart';
 import 'DeepCareScreen.dart';
 import 'ExercisesScreen.dart';
 import 'RateScreen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NavDrawer extends StatelessWidget {
+
+
+  launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -46,10 +57,7 @@ class NavDrawer extends StatelessWidget {
             title: Text('AVALIE'),
             onTap: () => {
               Navigator.of(context).pop(),
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => RateScreen()),
-              )
+              launchURL('https://www.deeplungcare.com/avalie')
             },
           ),
           ListTile(

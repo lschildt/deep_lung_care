@@ -1,5 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:deep_lung_care/widgets/DeepCareScreen.dart';
+import 'package:deep_lung_care/widgets/ExercisesScreen.dart';
 import 'package:deep_lung_care/widgets/NavDrawer.dart';
 import 'package:flutter/material.dart';
 
@@ -86,31 +88,50 @@ class _MyHomePageState extends State<MyHomePage> {
                   );
                 }),
               ),
-              Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Card(
-                      elevation: 0,
-                      shadowColor: Colors.black,
-                      color: Colors.white,
-                      child: InkWell(
-                        splashColor: Colors.green.withAlpha(30),
-                        onTap: () {
-                          print('Card tapped.');
-                        },
-                        child: SizedBox(
+
+              Container(
+                  color: Colors.white,
+                  height: 100,
+                  child: Column(
+                      children: <Widget>[
+                        SizedBox(
                           width: (MediaQuery.of(context).size.width) - 10,
-                          height: 60,
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
-                            child: Center (
-                              child : Text("FISIOTERAPIA RESPIRATÓRIA", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.green))
+                          height: 5,
+                        ),
+                        Container(
+                          child: SizedBox(
+                            width: (MediaQuery.of(context).size.width) - 10,
+                            height: 40,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
+                              child: Center (
+                                  child : Text("FISIOTERAPIA RESPIRATÓRIA", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.green))
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ),
-                  ]
+                        Container(
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints.tightFor(width: 200),
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  textStyle: TextStyle(fontSize: 14)
+                                , side: BorderSide(width: 0.5, color: Colors.green)
+                                , primary: Colors.white
+                              ),
+                              onPressed: () => {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => ExercisesScreen()),
+                                )
+                              },
+                              child: Text('EXERCÍCIOS', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.green)),
+                            ),
+                          ),
+                        )
+
+                      ]
+                  ),
               ),
               Container(
                 margin: const EdgeInsets.all(5.0),
@@ -146,43 +167,72 @@ class _MyHomePageState extends State<MyHomePage> {
                 margin: const EdgeInsets.all(5.0),
                 padding: const EdgeInsets.all(5.0),
                 color: Colors.white,
-                child: Row(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Expanded(
-                      flex: 1,
-                      child: Container(
-                        child: Text("DEEP CARE", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.green)),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: Row(
-                          children: <Widget>[
-                          Expanded(
-                            flex: 2,
-                            child: Container(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  Text("PARE", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                                  SizedBox(height: 8),
-                                  Text("RESPIRE", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                                  SizedBox(height: 8),
-                                  Text("PRATIQUE", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                                ],
+                    Row(
+                      children: <Widget>[
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            child: Text("DEEP CARE", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.green)),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Row(
+                              children: <Widget>[
+                              Expanded(
+                                flex: 2,
+                                child: Container(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: <Widget>[
+                                      Text("PARE", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                                      SizedBox(height: 8),
+                                      Text("RESPIRE", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                                      SizedBox(height: 8),
+                                      Text("PRATIQUE", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                                    ],
+                                  ),
+                                ),
                               ),
-                            ),
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  height: 90,
+                                  child: Image.asset('assets/images/deep.png'),
+                                ),
+                              ),
+                            ],
                           ),
-                          Expanded(
-                            flex: 1,
-                            child: Container(
-                              height: 90,
-                              child: Image.asset('assets/images/deep.png'),
-                            ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      width: (MediaQuery.of(context).size.width) - 10,
+                      height: 15,
+                    ),
+                    Container(
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints.tightFor(width: 200),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              textStyle: TextStyle(fontSize: 14)
+                              , side: BorderSide(width: 0.5, color: Colors.green)
+                              , primary: Colors.white
                           ),
-                        ],
+                          onPressed: () => {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DeepCareScreen()
+                              )
+                            )
+                          },
+                          child: Text('EXPERIMENTE', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.green)),
+                        ),
                       ),
                     ),
                   ],

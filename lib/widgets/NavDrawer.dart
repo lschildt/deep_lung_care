@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'ContactScreen.dart';
 import 'DeepCareScreen.dart';
 import 'ExercisesScreen.dart';
-import 'RateScreen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NavDrawer extends StatelessWidget {
